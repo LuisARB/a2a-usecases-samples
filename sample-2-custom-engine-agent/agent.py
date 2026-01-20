@@ -6,6 +6,7 @@ to communicate with other agents.
 
 import os
 import asyncio
+import time
 from typing import Any, Dict, List, Optional
 from dataclasses import dataclass
 import aiohttp
@@ -64,7 +65,7 @@ class A2AProtocolClient:
             "message": message,
             "conversation_id": conversation_id or "",
             "context": context or {},
-            "timestamp": asyncio.get_event_loop().time()
+            "timestamp": time.time()
         }
         
         logger.info(f"Invoking target agent: {self.target_agent_endpoint}")

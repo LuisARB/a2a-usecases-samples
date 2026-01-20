@@ -69,8 +69,14 @@ class CosmosDBReader:
         """
         logger.info(f"Reading alerts from Cosmos DB (limit={limit}, min_risk={min_risk_score})")
         
-        # Note: In production, use azure-cosmos SDK
-        # This is a simplified version using REST API
+        # Note: This is a simplified implementation for demonstration purposes.
+        # In production, use the azure-cosmos SDK which handles authentication correctly:
+        # from azure.cosmos import CosmosClient
+        # client = CosmosClient(self.cosmos_endpoint, self.cosmos_key)
+        # database = client.get_database_client(self.database_name)
+        # container = database.get_container_client(self.container_name)
+        # query = "SELECT * FROM c WHERE c.risk_score >= @minRisk"
+        # items = list(container.query_items(query, parameters=[{"name": "@minRisk", "value": min_risk_score}]))
         
         headers = {
             "Authorization": self.cosmos_key,
@@ -235,11 +241,14 @@ class WhatsAppACSAgent:
         """
         risk_emoji = "🔴" if alert.risk_score >= 0.9 else "🟡" if alert.risk_score >= 0.7 else "🟢"
         
+        # Mask account number for security - show only last 4 digits
+        masked_account = "****" + alert.account_number[-4:] if len(alert.account_number) >= 4 else "****"
+        
         message = f"""
 {risk_emoji} **BANK ALERT - Suspicious Activity Detected**
 
 **Alert ID:** {alert.alert_id}
-**Account:** {alert.account_number}
+**Account:** {masked_account}
 **Transaction:** {alert.transaction_id}
 
 **Amount:** {alert.currency} {alert.amount:,.2f}

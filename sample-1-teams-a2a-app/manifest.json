@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "id": "YOUR-APP-ID-HERE",
   "packageName": "com.example.teamsa2abot",
+  "_comment": "Generate a new GUID for 'id' using: python -c 'import uuid; print(uuid.uuid4())' or use the App ID from Azure Bot registration",
   "developer": {
     "name": "Your Company",
     "websiteUrl": "https://www.example.com",
@@ -26,6 +27,7 @@
   "bots": [
     {
       "botId": "YOUR-APP-ID-HERE",
+      "_comment": "botId must match the 'id' field above and the App ID from Azure Bot registration",
       "scopes": [
         "personal",
         "team",

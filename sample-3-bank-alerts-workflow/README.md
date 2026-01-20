@@ -128,7 +128,9 @@ MIN_RISK_SCORE=0.7
 
 ### 5. Prepare Sample Data
 
-Insert sample alerts into Cosmos DB:
+Insert sample alerts into Cosmos DB using the official SDK:
+
+**Important:** The workflow includes a simplified REST API implementation for demonstration. For production use, always use the official `azure-cosmos` SDK as shown below:
 
 ```python
 from azure.cosmos import CosmosClient
@@ -206,13 +208,13 @@ Each alert in Cosmos DB should have the following structure:
 
 ## WhatsApp Message Format
 
-Alerts are sent with the following format:
+Alerts are sent with the following format (note: account numbers are masked for security):
 
 ```
 🔴 **BANK ALERT - Suspicious Activity Detected**
 
 **Alert ID:** alert-001
-**Account:** 1234567890
+**Account:** ****7890
 **Transaction:** txn-abc123
 
 **Amount:** USD 5,000.00
@@ -229,6 +231,8 @@ if you did not authorize this activity.
 
 For assistance, call: 1-800-BANK-HELP
 ```
+
+**Security Note:** Account numbers are masked to show only the last 4 digits to protect sensitive information when sending via messaging channels.
 
 ## Workflow Process
 
