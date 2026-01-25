@@ -205,3 +205,28 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Azure/Teams credentials and local settings
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+!appsettings.*.json.example
+*.local.settings.json
+local.settings.json
+
+# Teams Toolkit environment files with secrets
+env/.env.*.user
+env/.env.local
+**/env/.env.dev
+**/env/.env.local
+
+# Build outputs for Teams apps
+appPackage/build/
+*.zip
+
+# .NET build outputs
+**/bin/
+**/obj/
+
+# User secrets
+secrets.json

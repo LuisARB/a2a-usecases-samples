@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:5067
+
+### Get Agent Card
+GET {{baseUrl}}/a2a/ninja/v1/card
+Accept: application/json
+
+### Send a message to the Ninja Agent
+POST {{baseUrl}}/a2a/ninja/v1/tasks
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": "1",
+  "method": "tasks/create",
+  "params": {
+    "id": "test-task-1",
+    "message": {
+      "role": "user",
+      "parts": [
+        {
+          "kind": "text",
+          "text": "¿Cuál es el camino hacia la sabiduría?"
+        }
+      ]
+    }
+  }
+}
+
+### Send another message
+POST {{baseUrl}}/a2a/ninja/v1/tasks
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": "2",
+  "method": "tasks/create",
+  "params": {
+    "id": "test-task-2",
+    "message": {
+      "role": "user",
+      "parts": [
+        {
+          "kind": "text",
+          "text": "Dame un consejo para enfrentar los desafíos de la vida"
+        }
+      ]
+    }
+  }
+}

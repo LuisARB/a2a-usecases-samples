@@ -1,0 +1,5 @@
+azure-ai-agentserver-agentframework==1.0.0b9
+agent-framework>=1.0.0b260107
+a2a-sdk==0.3.22
+azure-ai-agents==1.2.0b5
+azure-ai-projects==2.0.0b3

@@ -1,0 +1,11 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AZURE_OPENAI_ENDPOINT": "https://<your-resource>.cognitiveservices.azure.com/",
+  "AZURE_OPENAI_DEPLOYMENT_NAME": "gpt-4o",
+  "AZURE_OPENAI_API_KEY": "<your-api-key>"
+}

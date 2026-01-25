@@ -1,0 +1,9 @@
+{
+  "hostedAgentDeployOptions": {
+    "dockerContextPath": "/workspaces/a2a-usecases-samples",
+    "dockerfilePath": "/workspaces/a2a-usecases-samples/a2a-agents-workflow/Dockerfile",
+    "agentName": "a2a-workflow-agent",
+    "cpu": "0.75",
+    "memory": "1.5Gi"
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Python Development Container",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest",
+            "enableNonRootDocker": "true",
+            "moby": "true"
+        },
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/dotnet:2": {
+            "version": "9.0"
+        },
+        "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "ms-windows-ai-studio.windows-ai-studio"
+            ]
+        }
+    },
+    "postCreateCommand": "python --version && docker --version && az --version && node --version && npm --version && dotnet --version && devtunnel --version",
+    "remoteUser": "vscode"
+}
