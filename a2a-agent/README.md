@@ -8,14 +8,14 @@ Agentes de IA expuestos a través del protocolo **A2A (Agent-to-Agent)** impleme
 ## 🏗️ Arquitectura
 
 ```
-┌──────────────────┐     ┌─────────────────┐     ┌──────────────┐
-│  A2A Client      │────▶│  NinjaAgent     │────▶│ Azure OpenAI │
-│  (Workflow,      │◀────│  Puerto 5067    │◀────│              │
-│   Teams Bot)     │     └─────────────────┘     │  GPT-4.1     │
-│                  │     ┌─────────────────┐     │              │
-│                  │────▶│  PirateAgent    │────▶│              │
-│                  │◀────│  Puerto 5066    │◀────│              │
-└──────────────────┘     └─────────────────┘     └──────────────┘
++------------------+     +-----------------+     +--------------+
+|  A2A Client      |---->|  NinjaAgent     |---->| Azure OpenAI |
+|  (Workflow,      |<----|  Puerto 5067    |<----|              |
+|   Teams Bot)     |     +-----------------+     |  GPT-4.1     |
+|                  |     +-----------------+     |              |
+|                  |---->|  PirateAgent    |---->|              |
+|                  |<----|  Puerto 5066    |<----|              |
++------------------+     +-----------------+     +--------------+
 ```
 
 ## 📁 Estructura del Proyecto
