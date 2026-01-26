@@ -18,7 +18,7 @@ Colección de ejemplos que demuestran cómo comunicarse con agentes de IA utiliz
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                              Azure AI Foundry                                    │
+│                              Azure AI Foundry                                   │
 │  ┌───────────────────────────────────────────────────────────────────────────┐  │
 │  │                    A2A Workflow (Hosted Agent)                            │  │
 │  │                    a2a-agents-workflow                                    │  │
@@ -30,7 +30,7 @@ Colección de ejemplos que demuestran cómo comunicarse con agentes de IA utiliz
 ┌───────────────────────────┐          │    ┌───────────────────────────┐
 │   Azure Container Apps    │          │    │   Azure Container Apps    │
 │  ┌─────────────────────┐  │          │    │  ┌─────────────────────┐  │
-│  │    NinjaAgent 🥷    │  │          │    │  │   PirateAgent 🏴‍☠️  │  │
+│  │    NinjaAgent       │  │          │    │  │   PirateAgent       │  │
 │  │    a2a-agent        │  │          │    │  │    a2a-agent        │  │
 │  └─────────────────────┘  │          │    │  └─────────────────────┘  │
 └───────────────────────────┘          │    └───────────────────────────┘

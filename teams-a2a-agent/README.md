@@ -5,10 +5,10 @@ Bot de Microsoft Teams que se comunica con un agente de IA usando el protocolo *
 ## 🏗️ Arquitectura
 
 ```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐     ┌──────────────┐
-│  Microsoft      │────▶│  Teams A2A Bot   │────▶│  Pirate Agent   │────▶│ Azure OpenAI │
-│  Teams          │◀────│  (Python)        │◀────│  (A2A Server)   │◀────│              │
-└─────────────────┘     └──────────────────┘     └─────────────────┘     └──────────────┘
++------------------+     +------------------+     +-----------------+     +--------------+
+|  Microsoft       |---->|  Teams A2A Bot   |---->|  Pirate Agent   |---->| Azure OpenAI |
+|  Teams           |<----|  (Python)        |<----|  (A2A Server)   |<----|              |
++------------------+     +------------------+     +-----------------+     +--------------+
       Usuario              Puerto 3978            Puerto 5066           LLM en la nube
 ```
 
