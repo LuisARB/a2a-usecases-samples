@@ -2,7 +2,9 @@
 """
 Deploy A2A Workflow Hosted Agent to Microsoft Foundry
 
-Required environment variables:
+Configuration is loaded from .env file in the same directory.
+
+Required variables:
   PROJECT_ENDPOINT              - Azure AI Project endpoint
   AGENT_NAME                    - Name of the agent to create/update
   CONTAINER_IMAGE               - Container image URL from ACR
@@ -11,11 +13,18 @@ Required environment variables:
   AZURE_AI_PROJECT_ENDPOINT     - Azure AI Project endpoint for the workflow
   AZURE_AI_MODEL_DEPLOYMENT_NAME - Model deployment name (e.g., gpt-4.1)
 
-Optional environment variables:
+Optional variables:
   APPLICATIONINSIGHTS_CONNECTION_STRING - Application Insights connection string for logging
 """
 import os
 import sys
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env file from the same directory as this script
+env_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path=env_path)
+print(f"📁 Loading configuration from: {env_path}")
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import ImageBasedHostedAgentDefinition, ProtocolVersionRecord, AgentProtocol
 from azure.identity import DefaultAzureCredential
